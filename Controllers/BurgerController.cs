@@ -33,5 +33,44 @@ namespace csharpfoodtruck.Controllers
                 return BadRequest(e.Message);
             }
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<IEnumerable<Burger>> GetById(int id)
+        {
+            try
+            {
+                return Ok(_bs.GetById(id));
+            }
+            catch (System.Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpPost]
+        public ActionResult<Burger> Create(Burger burger)
+        {
+            try
+            {
+                return Ok(_bs.Create(burger));
+            }
+            catch (System.Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult<Burger> Delete(int id)
+        {
+            try
+            {
+                return Ok(_bs.Delete(id));
+            }
+            catch (System.Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }
 }

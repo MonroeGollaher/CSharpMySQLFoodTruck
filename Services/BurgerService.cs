@@ -20,5 +20,28 @@ namespace csharpfoodtruck.Services
     {
       return _repo.GetAll();
     }
+
+    public Burger GetById(int id)
+    {
+      Burger foundBurger = _repo.GetById(id);
+      if(foundBurger == null)
+      {
+        throw new Exception("There is no burger with that id");
+      }
+      return foundBurger;
+    }
+    public Burger Create(Burger burger)
+    {
+      return _repo.Create(burger);
+    }
+
+    public string Delete(int id)
+    {
+      if(_repo.Delete(id))
+      {
+        return "You have deleted the burger";
+      }
+      throw new Exception("That did not work");
+    }
   }
 }
