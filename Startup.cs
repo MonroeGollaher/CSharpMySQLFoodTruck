@@ -41,6 +41,8 @@ namespace csharpfoodtruck
             services.AddTransient<BurritoRepository>();
             services.AddTransient<BurgerService>();
             services.AddTransient<BurgerRepository>();
+            services.AddTransient<TacoService>();
+            services.AddTransient<TacoRepository>();
         }
 
         private IDbConnection CreateDbConnection()

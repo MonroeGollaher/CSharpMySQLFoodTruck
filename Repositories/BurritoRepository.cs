@@ -42,7 +42,6 @@ namespace csharpfoodtruck.Repositories
     {
         string sql = "SELECT * FROM burritos WHERE id=@Id";
         return _db.QueryFirstOrDefault<Burrito>(sql, new { id });
-
     }
   }
 }

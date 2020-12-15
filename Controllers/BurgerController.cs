@@ -7,7 +7,6 @@ using csharpfoodtruck.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-
 namespace csharpfoodtruck.Controllers
 {
     [ApiController]
@@ -48,7 +47,7 @@ namespace csharpfoodtruck.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Burger> Create(Burger burger)
+        public ActionResult<Burger> Create([FromBody] Burger burger)
         {
             try
             {
